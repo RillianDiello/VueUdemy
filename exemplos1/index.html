@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Introdução ao Vue JS</title>
+        <script src="https://unpkg.com/vue"></script>
+    </head>
+    <body>
+
+        <div id="app">
+            {{ msg }}
+            <p v-bind:title="paragrafo"> Teste com Title</p>
+            <p v-if="condicao"> Teste com IF</p>
+            <p v-for="registro in registros">{{ registro.titulo }} </p>
+            <button v-if="!click" v-on:click="setClick"> Salvar </button>
+            <button v-if="click" v-on:click="setClick"> Aguarde... </button>
+            <p>
+                <input type="text" v-model="usuario.nome">
+            </p>
+            <p>Nome: {{usuario.nome}}   </p>
+        </div>
+
+        <script type="text/javascript">
+            var app = new Vue({
+                el:"#app",
+                data:{
+                    msg:'Iniciando com Vue JS',
+                    paragrafo:"Teste com V-Bind",
+                    condicao: false,
+                    registros: [
+                        {titulo: 'registro1'},
+                        {titulo: 'registro2'},
+                        {titulo: 'registro3'},
+                        {titulo: 'registro4'},
+                        {titulo: 'registro5'},
+                    ],
+                    click: true,
+                    usuario:{
+                        nome:""
+                    }
+                },
+                methods:{
+                    setClick: function (){
+                        this.click = !this.click;
+                    }
+                }
+            });
+        </script>
+    </body>
+
+</html>
