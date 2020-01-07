@@ -1,7 +1,5 @@
 # VueUdemy
 
-
-1227/5000
 This project comprises the basic Udemy Vue.Js Introduction course. The course consists of basically 4.5 hours ranging from getting started, using basic Vue, the main directives (v-model, v-bind, v-on, v-if, v-for, v-button), the main components. of a Vue object like data, methods, filters, computed, watch etc.
 
 A brief introduction on the construction of some components was also presented and finally a more complex project called netflix_vue was built.
