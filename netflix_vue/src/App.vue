@@ -18,7 +18,7 @@ export default {
     Categoria
   },
   beforeCreate(){
-    this.$http.get(' http://localhost:3000/categorias').then(res => {
+    this.$http.get('http://localhost:3000/categorias').then(res => {
       this.categorias = res.body;
     });
   },
