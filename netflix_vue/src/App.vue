@@ -1,7 +1,8 @@
 <template>
 <div class="contain">
-  <categoria titulo="Comédia"></categoria>
-  <categoria titulo="Suspense"></categoria>
+  <categoria v-for="categoria in categorias" v-bind:key="categoria.id" v-bind:titulo="categoria.titulo"
+          v-bind:filmes="categoria.filmes"></categoria>
+  <!-- <categoria titulo="Suspense"></categoria> -->
 </div>
 
 </template>
@@ -16,10 +17,22 @@ export default {
   components: {
     Categoria
   },
+  beforeCreate(){
+    this.$http.get(' http://localhost:3000/categorias').then(res => {
+      this.categorias = res.body;
+    });
+  },
+  created(){
+
+  },
+  beforeMount(){
+
+  },
   data () {
     return {
       nomeProjeto: 'Netflix com Vue',
       intervalo: null,
+      categorias: []
     }
   }  
 }
