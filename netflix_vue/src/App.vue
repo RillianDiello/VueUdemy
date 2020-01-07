@@ -18,15 +18,15 @@ export default {
     Categoria
   },
   beforeCreate(){
+    console.log('beforeCreate');
+  },
+  created(){
     this.$http.get('http://localhost:3000/categorias').then(res => {
       this.categorias = res.body;
     });
   },
-  created(){
-
-  },
   beforeMount(){
-
+    console.log('beforeMout');
   },
   data () {
     return {
